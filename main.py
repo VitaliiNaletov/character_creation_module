@@ -1,7 +1,10 @@
 from random import randint
 
+"""Game."""
+
 
 def attack(char_name, char_class):
+    """Атаки."""
     if char_class == 'warrior':
         return (f'{char_name} '
                 f'нанёс урон противнику равный {5 + randint(3, 5)}')
@@ -11,31 +14,34 @@ def attack(char_name, char_class):
     if char_class == 'healer':
         return (f'{char_name} '
                 f'нанёс урон противнику равный {5 + randint(-3, -1)}')
-    return (f'{char_name} не нанес удар противнику')
+    return f'{char_name} не нанес удар противнику'
 
 
 def defence(char_name, char_class):
+    """Блокировки ударов."""
     if char_class == 'warrior':
-        return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
+        return f'{char_name} блокировал {10 + randint(5, 10)} урона'
     if char_class == 'mage':
-        return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
+        return f'{char_name} блокировал {10 + randint(-2, 2)} урона'
     if char_class == 'healer':
-        return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
-    return (f'{char_name} провал')
+        return f'{char_name} блокировал {10 + randint(2, 5)} урона'
+    return f'{char_name} провал'
 
 
 def special(char_name, char_class):
+    """Использование умений."""
     if char_class == 'warrior':
         return (f'{char_name} '
                 f'применил специальное умение «Выносливость {80 + 25}»')
     if char_class == 'mage':
-        return (f'{char_name} применил специальное умение «Атака {5 + 40}»')
+        return f'{char_name} применил специальное умение «Атака {5 + 40}»'
     if char_class == 'healer':
-        return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
-    return (f'{char_name} ничего не применил')
+        return f'{char_name} применил специальное умение «Защита {10 + 30}»'
+    return f'{char_name} ничего не применил'
 
 
 def start_training(char_name, char_class):
+    """Тренировка."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -61,6 +67,7 @@ def start_training(char_name, char_class):
 
 
 def choice_char_class():
+    """Описание выбранного персонажа с подтверждением."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
